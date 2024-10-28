@@ -1,14 +1,5 @@
 let connection;
-const movementCommands = {
-  'w': 'up',
-  'a': 'left',
-  's': 'down',
-  'd': 'right'
-};
-const messages = {
-  '1': 'Have a good game',
-  '2': 'GG'
-}
+const { MOVE_UP_KEY, MESSAGES_KEY } = require("./constants")
 
 // setup interface to handle user input from stdin
 
@@ -29,11 +20,11 @@ const handleUserInput = function (key) {
   if (key === "\u0003") {
     process.exit();
   }
-  const direction = movementCommands[key];
+  const direction = MOVE_UP_KEY[key];
   if (direction) {
     connection.write(`Move: ${direction}`);
   }
-  const cannedMessages = messages[key];
+  const cannedMessages = MESSAGES_KEY[key];
   if (cannedMessages) {
     connection.write(`Say: ${cannedMessages}`);
   };

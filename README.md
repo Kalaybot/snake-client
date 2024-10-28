@@ -14,7 +14,7 @@
 
 ## Final product
 
-![Gameplay Screenshot](gameplay-screenshot/Snek.png)
+![Gameplay Screenshot](Snek.png)
 
 ## Purpose
 
