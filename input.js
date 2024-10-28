@@ -4,6 +4,10 @@ const movementCommands = {
   'a': 'left',
   's': 'down',
   'd': 'right'
+};
+const messages = {
+  '1': 'Have a good game',
+  '2': 'GG'
 }
 
 // setup interface to handle user input from stdin
@@ -29,6 +33,10 @@ const handleUserInput = function (key) {
   if (direction) {
     connection.write(`Move: ${direction}`);
   }
+  const cannedMessages = messages[key];
+  if (cannedMessages) {
+    connection.write(`Say: ${cannedMessages}`);
+  };
 };
 
 module.exports = { setupInput };
